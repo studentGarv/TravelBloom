@@ -25,15 +25,41 @@ const DESTINATIONS = [
   { id: "17", name: "Patagonia, Argentina", descriptor: "The edge of the world", tags: ["south-america", "hiking", "glaciers", "torres-del-paine", "wilderness", "trekking"] },
   { id: "18", name: "Prague, Czech Republic", descriptor: "City of a Hundred Spires", tags: ["europe", "medieval", "castle", "beer", "bohemian", "architecture", "charming"] },
   { id: "19", name: "Phuket, Thailand", descriptor: "Pearl of the Andaman", tags: ["asia", "beach", "islands", "thai-food", "diving", "nightlife", "affordable"] },
-  { id: "20", name: "Arusha, Tanzania", descriptor: "Gateway to African wildlife", tags: ["africa", "safari", "kilimanjaro", "serengeti", "wildlife", "trekking", "nature"] },
+  { id: "20", name: "Arusha, Tanzania",         descriptor: "Gateway to African wildlife",       tags: ["africa", "safari", "kilimanjaro", "serengeti", "wildlife", "trekking", "nature"] },
+  // India destinations
+  { id: "21", name: "Agra, India",               descriptor: "Home of the Taj Mahal",             tags: ["india", "taj-mahal", "mughal", "history", "architecture", "romance", "heritage"] },
+  { id: "22", name: "Kerala, India",              descriptor: "God's Own Country",                tags: ["india", "backwaters", "ayurveda", "spices", "houseboats", "tropical", "nature"] },
+  { id: "23", name: "Jaipur, India",              descriptor: "The Pink City of Rajasthan",        tags: ["india", "rajasthan", "palaces", "forts", "pink-city", "markets", "heritage"] },
+  { id: "24", name: "Goa, India",                 descriptor: "India's beach paradise",            tags: ["india", "beach", "nightlife", "portuguese", "seafood", "surf", "carnival"] },
+  { id: "25", name: "Varanasi, India",            descriptor: "The Spiritual Capital of India",    tags: ["india", "spiritual", "ganges", "ghats", "hinduism", "pilgrimage", "ancient"] },
+  { id: "26", name: "Mumbai, India",              descriptor: "City of Dreams",                    tags: ["india", "bollywood", "gateway-of-india", "urban", "street-food", "cosmopolitan", "finance"] },
+  { id: "27", name: "Hampi, India",               descriptor: "Ruins of a glorious empire",        tags: ["india", "karnataka", "vijayanagara", "ruins", "ancient", "boulders", "heritage"] },
+  { id: "28", name: "Ladakh, India",              descriptor: "The Land of High Passes",           tags: ["india", "himalayas", "buddhism", "monasteries", "trekking", "mountain", "adventure"] },
+  { id: "29", name: "Andaman Islands, India",     descriptor: "Pristine archipelago in the Bay of Bengal", tags: ["india", "beach", "diving", "coral", "turquoise", "island", "snorkelling"] },
+  { id: "30", name: "Darjeeling, India",          descriptor: "Queen of the Hills",                tags: ["india", "tea", "himalayas", "toy-train", "mountains", "colonial", "bengal"] },
+  // India — Temples
+  { id: "31", name: "Madurai, India",              descriptor: "City of the Meenakshi Temple",       tags: ["india", "temple", "tamil-nadu", "meenakshi", "dravidian", "pilgrimage", "south-india"] },
+  { id: "32", name: "Khajuraho, India",            descriptor: "UNESCO temples of erotic sculpture",  tags: ["india", "temple", "madhya-pradesh", "unesco", "medieval", "chandela", "heritage"] },
+  { id: "33", name: "Tirupati, India",             descriptor: "Most visited pilgrimage in the world",tags: ["india", "temple", "andhra-pradesh", "venkateswara", "pilgrimage", "hindu", "spiritual"] },
+  { id: "34", name: "Puri, India",                 descriptor: "Home of the Jagannath Temple",       tags: ["india", "temple", "odisha", "jagannath", "rath-yatra", "pilgrimage", "beach"] },
+  { id: "35", name: "Mahabalipuram, India",        descriptor: "Shore temples of the Pallava dynasty",tags: ["india", "temple", "tamil-nadu", "pallava", "unesco", "rock-cut", "coastal"] },
+  { id: "36", name: "Bhubaneswar, India",          descriptor: "City of Temples",                    tags: ["india", "temple", "odisha", "lingaraja", "kalinga", "ancient", "heritage"] },
+  { id: "37", name: "Tiruchirappalli, India",      descriptor: "Ranganathaswamy — island-temple wonder",tags: ["india", "temple", "tamil-nadu", "srirangam", "dravidian", "south-india", "gopuram"] },
+  { id: "38", name: "Somnath, India",              descriptor: "First of the twelve Jyotirlinga shrines",tags: ["india", "temple", "gujarat", "shiva", "jyotirlinga", "pilgrimage", "ancient"] },
 ];
 
 /** Destination emoji map for visual flair */
 const DEST_EMOJI = {
-  "1": "🗼", "2": "⛩️", "3": "🏛️", "4": "🌺", "5": "🗽",
-  "6": "🏔️", "7": "🦁", "8": "🌸", "9": "🏗️", "10": "🏝️",
+  "1":  "🗼", "2":  "⛩️", "3":  "🏛️", "4":  "🌺", "5":  "🗽",
+  "6":  "🏔️", "7":  "🦁", "8":  "🌸", "9":  "🏗️", "10": "🏝️",
   "11": "🚤", "12": "🥝", "13": "🐫", "14": "🌴", "15": "🌋",
   "16": "🏙️", "17": "🧊", "18": "🏰", "19": "🐚", "20": "🦒",
+  // India
+  "21": "🕌", "22": "🌿", "23": "🏯", "24": "🏖️", "25": "🪔",
+  "26": "🎬", "27": "🗿", "28": "🏔️", "29": "🐠", "30": "🍵",
+  // India — Temples
+  "31": "🛕", "32": "🗿", "33": "🙏", "34": "🎡", "35": "🏛️",
+  "36": "⛪", "37": "🌊", "38": "🔱",
 };
 
 // ============================================================
