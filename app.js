@@ -25,42 +25,90 @@ const DESTINATIONS = [
   { id: "17", name: "Patagonia, Argentina", descriptor: "The edge of the world", tags: ["south-america", "hiking", "glaciers", "torres-del-paine", "wilderness", "trekking"] },
   { id: "18", name: "Prague, Czech Republic", descriptor: "City of a Hundred Spires", tags: ["europe", "medieval", "castle", "beer", "bohemian", "architecture", "charming"] },
   { id: "19", name: "Phuket, Thailand", descriptor: "Pearl of the Andaman", tags: ["asia", "beach", "islands", "thai-food", "diving", "nightlife", "affordable"] },
-  { id: "20", name: "Arusha, Tanzania",         descriptor: "Gateway to African wildlife",       tags: ["africa", "safari", "kilimanjaro", "serengeti", "wildlife", "trekking", "nature"] },
+  { id: "20", name: "Arusha, Tanzania", descriptor: "Gateway to African wildlife", tags: ["africa", "safari", "kilimanjaro", "serengeti", "wildlife", "trekking", "nature"] },
   // India destinations
-  { id: "21", name: "Agra, India",               descriptor: "Home of the Taj Mahal",             tags: ["india", "taj-mahal", "mughal", "history", "architecture", "romance", "heritage"] },
-  { id: "22", name: "Kerala, India",              descriptor: "God's Own Country",                tags: ["india", "backwaters", "ayurveda", "spices", "houseboats", "tropical", "nature"] },
-  { id: "23", name: "Jaipur, India",              descriptor: "The Pink City of Rajasthan",        tags: ["india", "rajasthan", "palaces", "forts", "pink-city", "markets", "heritage"] },
-  { id: "24", name: "Goa, India",                 descriptor: "India's beach paradise",            tags: ["india", "beach", "nightlife", "portuguese", "seafood", "surf", "carnival"] },
-  { id: "25", name: "Varanasi, India",            descriptor: "The Spiritual Capital of India",    tags: ["india", "spiritual", "ganges", "ghats", "hinduism", "pilgrimage", "ancient"] },
-  { id: "26", name: "Mumbai, India",              descriptor: "City of Dreams",                    tags: ["india", "bollywood", "gateway-of-india", "urban", "street-food", "cosmopolitan", "finance"] },
-  { id: "27", name: "Hampi, India",               descriptor: "Ruins of a glorious empire",        tags: ["india", "karnataka", "vijayanagara", "ruins", "ancient", "boulders", "heritage"] },
-  { id: "28", name: "Ladakh, India",              descriptor: "The Land of High Passes",           tags: ["india", "himalayas", "buddhism", "monasteries", "trekking", "mountain", "adventure"] },
-  { id: "29", name: "Andaman Islands, India",     descriptor: "Pristine archipelago in the Bay of Bengal", tags: ["india", "beach", "diving", "coral", "turquoise", "island", "snorkelling"] },
-  { id: "30", name: "Darjeeling, India",          descriptor: "Queen of the Hills",                tags: ["india", "tea", "himalayas", "toy-train", "mountains", "colonial", "bengal"] },
-  // India — Temples
-  { id: "31", name: "Madurai, India",              descriptor: "City of the Meenakshi Temple",       tags: ["india", "temple", "tamil-nadu", "meenakshi", "dravidian", "pilgrimage", "south-india"] },
-  { id: "32", name: "Khajuraho, India",            descriptor: "UNESCO temples of erotic sculpture",  tags: ["india", "temple", "madhya-pradesh", "unesco", "medieval", "chandela", "heritage"] },
-  { id: "33", name: "Tirupati, India",             descriptor: "Most visited pilgrimage in the world",tags: ["india", "temple", "andhra-pradesh", "venkateswara", "pilgrimage", "hindu", "spiritual"] },
-  { id: "34", name: "Puri, India",                 descriptor: "Home of the Jagannath Temple",       tags: ["india", "temple", "odisha", "jagannath", "rath-yatra", "pilgrimage", "beach"] },
-  { id: "35", name: "Mahabalipuram, India",        descriptor: "Shore temples of the Pallava dynasty",tags: ["india", "temple", "tamil-nadu", "pallava", "unesco", "rock-cut", "coastal"] },
-  { id: "36", name: "Bhubaneswar, India",          descriptor: "City of Temples",                    tags: ["india", "temple", "odisha", "lingaraja", "kalinga", "ancient", "heritage"] },
-  { id: "37", name: "Tiruchirappalli, India",      descriptor: "Ranganathaswamy — island-temple wonder",tags: ["india", "temple", "tamil-nadu", "srirangam", "dravidian", "south-india", "gopuram"] },
-  { id: "38", name: "Somnath, India",              descriptor: "First of the twelve Jyotirlinga shrines",tags: ["india", "temple", "gujarat", "shiva", "jyotirlinga", "pilgrimage", "ancient"] },
+  { id: "21", name: "Agra, India", descriptor: "Home of the Taj Mahal", tags: ["india", "taj-mahal", "mughal", "history", "architecture", "romance", "heritage"] },
+  { id: "22", name: "Kerala, India", descriptor: "God's Own Country", tags: ["india", "backwaters", "ayurveda", "spices", "houseboats", "tropical", "nature"] },
+  { id: "23", name: "Jaipur, India", descriptor: "The Pink City of Rajasthan", tags: ["india", "rajasthan", "palaces", "forts", "pink-city", "markets", "heritage"] },
+  { id: "24", name: "Goa, India", descriptor: "India's beach paradise", tags: ["india", "beach", "nightlife", "portuguese", "seafood", "surf", "carnival"] },
+  { id: "25", name: "Varanasi, India", descriptor: "The Spiritual Capital of India", tags: ["india", "spiritual", "ganges", "ghats", "hinduism", "pilgrimage", "ancient"] },
+  { id: "26", name: "Mumbai, India", descriptor: "City of Dreams", tags: ["india", "bollywood", "gateway-of-india", "urban", "street-food", "cosmopolitan", "finance"] },
+  { id: "27", name: "Hampi, India", descriptor: "Ruins of a glorious empire", tags: ["india", "karnataka", "vijayanagara", "ruins", "ancient", "boulders", "heritage"] },
+  { id: "28", name: "Ladakh, India", descriptor: "The Land of High Passes", tags: ["india", "himalayas", "buddhism", "monasteries", "trekking", "mountain", "adventure"] },
+  { id: "29", name: "Andaman Islands, India", descriptor: "Pristine archipelago in the Bay of Bengal", tags: ["india", "beach", "diving", "coral", "turquoise", "island", "snorkelling"] },
+  { id: "30", name: "Darjeeling, India", descriptor: "Queen of the Hills", tags: ["india", "tea", "himalayas", "toy-train", "mountains", "colonial", "bengal"] },
+  { id: "31", name: "Madurai, India", descriptor: "City of the Meenakshi Temple", tags: ["india", "temple", "tamil-nadu", "meenakshi", "dravidian", "pilgrimage", "south-india"] },
+  { id: "32", name: "Khajuraho, India", descriptor: "UNESCO temples of erotic sculpture", tags: ["india", "temple", "madhya-pradesh", "unesco", "medieval", "chandela", "heritage"] },
+  { id: "33", name: "Tirupati, India", descriptor: "Most visited pilgrimage in the world", tags: ["india", "temple", "andhra-pradesh", "venkateswara", "pilgrimage", "hindu", "spiritual"] },
+  { id: "34", name: "Puri, India", descriptor: "Home of the Jagannath Temple", tags: ["india", "temple", "odisha", "jagannath", "rath-yatra", "pilgrimage", "beach"] },
+  { id: "35", name: "Mahabalipuram, India", descriptor: "Shore temples of the Pallava dynasty", tags: ["india", "temple", "tamil-nadu", "pallava", "unesco", "rock-cut", "coastal"] },
+  { id: "36", name: "Bhubaneswar, India", descriptor: "City of Temples", tags: ["india", "temple", "odisha", "lingaraja", "kalinga", "ancient", "heritage"] },
+  { id: "37", name: "Tiruchirappalli, India", descriptor: "Ranganathaswamy — island-temple wonder", tags: ["india", "temple", "tamil-nadu", "srirangam", "dravidian", "south-india", "gopuram"] },
+  { id: "38", name: "Somnath, India", descriptor: "First of the twelve Jyotirlinga shrines", tags: ["india", "temple", "gujarat", "shiva", "jyotirlinga", "pilgrimage", "ancient"] },
 ];
 
 /** Destination emoji map for visual flair */
 const DEST_EMOJI = {
-  "1":  "🗼", "2":  "⛩️", "3":  "🏛️", "4":  "🌺", "5":  "🗽",
-  "6":  "🏔️", "7":  "🦁", "8":  "🌸", "9":  "🏗️", "10": "🏝️",
+  "1": "🗼", "2": "⛩️", "3": "🏛️", "4": "🌺", "5": "🗽",
+  "6": "🏔️", "7": "🦁", "8": "🌸", "9": "🏗️", "10": "🏝️",
   "11": "🚤", "12": "🥝", "13": "🐫", "14": "🌴", "15": "🌋",
   "16": "🏙️", "17": "🧊", "18": "🏰", "19": "🐚", "20": "🦒",
   // India
   "21": "🕌", "22": "🌿", "23": "🏯", "24": "🏖️", "25": "🪔",
   "26": "🎬", "27": "🗿", "28": "🏔️", "29": "🐠", "30": "🍵",
-  // India — Temples
   "31": "🛕", "32": "🗿", "33": "🙏", "34": "🎡", "35": "🏛️",
   "36": "⛪", "37": "🌊", "38": "🔱",
 };
+
+/** Flag emoji for each country in the dataset */
+const COUNTRY_FLAGS = {
+  "France": "🇫🇷", "Japan": "🇯🇵", "Greece": "🇬🇷",
+  "Indonesia": "🇮🇩", "USA": "🇺🇸", "Peru": "🇵🇪",
+  "Kenya": "🇰🇪", "Spain": "🇪🇸", "Maldives": "🇲🇻",
+  "Italy": "🇮🇹", "New Zealand": "🇳🇿", "Egypt": "🇪🇬",
+  "Brazil": "🇧🇷", "Iceland": "🇮🇸", "UAE": "🇦🇪",
+  "Argentina": "🇦🇷", "Czech Republic": "🇨🇿", "Thailand": "🇹🇭",
+  "Tanzania": "🇹🇿", "India": "🇮🇳",
+};
+
+/** Maps destination id → country name */
+const DEST_COUNTRY = {
+  "1": "France", "2": "Japan", "3": "Greece",
+  "4": "Indonesia", "5": "USA", "6": "Peru",
+  "7": "Kenya", "8": "Japan", "9": "Spain",
+  "10": "Maldives", "11": "Italy", "12": "New Zealand",
+  "13": "Egypt", "14": "Brazil", "15": "Iceland",
+  "16": "UAE", "17": "Argentina", "18": "Czech Republic",
+  "19": "Thailand", "20": "Tanzania",
+  // India
+  "21": "India", "22": "India", "23": "India", "24": "India", "25": "India",
+  "26": "India", "27": "India", "28": "India", "29": "India", "30": "India",
+  "31": "India", "32": "India", "33": "India", "34": "India", "35": "India",
+  "36": "India", "37": "India", "38": "India",
+};
+
+/**
+ * Returns all unique countries with flag, name and destination count.
+ * @returns {{ name: string, flag: string, count: number }[]}
+ */
+function getUniqueCountries() {
+  const map = {};
+  DESTINATIONS.forEach(dest => {
+    const country = DEST_COUNTRY[dest.id];
+    if (!country) return;
+    if (!map[country]) map[country] = { name: country, flag: COUNTRY_FLAGS[country] || "🏳️", count: 0 };
+    map[country].count++;
+  });
+  return Object.values(map).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/**
+ * True if query is asking to browse countries.
+ * @param {string} q lowercase trimmed query
+ */
+function isCountryBrowseQuery(q) {
+  return ["country", "countries", "countr", "all countries", "destinations by country"].includes(q);
+}
 
 // ============================================================
 // SEARCH ENGINE MODULE
@@ -76,16 +124,24 @@ const SearchEngine = (() => {
   function search(query) {
     try {
       if (typeof query !== "string" || query.trim().length < 2) {
-        return { matches: [], isLoading: false, error: null };
+        return { matches: [], isLoading: false, error: null, countryMode: false, countries: [] };
       }
       const q = query.trim().toLowerCase();
+
+      // Country-browse mode
+      if (isCountryBrowseQuery(q)) {
+        return { matches: [], isLoading: false, error: null, countryMode: true, countries: getUniqueCountries() };
+      }
+
       const matches = DESTINATIONS.filter(dest => {
         const inName = dest.name.toLowerCase().includes(q);
         const inDescriptor = dest.descriptor.toLowerCase().includes(q);
         const inTags = dest.tags.some(tag => tag.toLowerCase().includes(q));
-        return inName || inDescriptor || inTags;
+        // also match country name directly
+        const inCountry = (DEST_COUNTRY[dest.id] || "").toLowerCase().includes(q);
+        return inName || inDescriptor || inTags || inCountry;
       });
-      return { matches, isLoading: false, error: null };
+      return { matches, isLoading: false, error: null, countryMode: false, countries: [] };
     } catch (err) {
       console.error("[SearchEngine] Error:", err);
       return {
@@ -170,7 +226,7 @@ const RecommendationList = (() => {
    * Render the recommendation list based on search state.
    * @param {{ items: Destination[], isLoading: boolean, error: string|null, noResults: boolean, visible: boolean }} state
    */
-  function render({ items, isLoading, error, noResults, visible }) {
+  function render({ items, isLoading, error, noResults, visible, countryMode, countries }) {
     if (!visible) {
       hide();
       return;
@@ -193,6 +249,33 @@ const RecommendationList = (() => {
           <div class="rec-emoji">⚠️</div>
           <p>${escapeHtml(error)}</p>
         </div>`;
+      return;
+    }
+
+    // ── Country browse mode ──────────────────────────────────
+    if (countryMode && countries && countries.length > 0) {
+      const header = document.createElement("div");
+      header.className = "rec-country-header";
+      header.innerHTML = `<span class="rec-country-label">🌍 Browse by Country</span><span class="rec-country-count">${countries.length} countries</span>`;
+      inner.appendChild(header);
+
+      const grid = document.createElement("div");
+      grid.className = "rec-country-grid";
+
+      countries.forEach(({ name, flag, count }) => {
+        const pill = document.createElement("button");
+        pill.className = "rec-country-pill";
+        pill.setAttribute("type", "button");
+        pill.setAttribute("aria-label", `${name} — ${count} destination${count !== 1 ? 's' : ''}`);
+        pill.innerHTML = `
+          <span class="rec-country-pill__flag">${flag}</span>
+          <span class="rec-country-pill__name">${escapeHtml(name)}</span>
+          <span class="rec-country-pill__count">${count}</span>`;
+        pill.addEventListener("click", () => _onSelect({ _countrySelect: true, name }));
+        grid.appendChild(pill);
+      });
+
+      inner.appendChild(grid);
       return;
     }
 
@@ -368,11 +451,31 @@ function triggerFullResults(query) {
   overlay.setAttribute("aria-label", `Search results for "${query}"`);
 
   let bodyHtml;
+  let subtitleHtml = '';
+
   if (result.error) {
     bodyHtml = `<div class="rec-state rec-state--error"><div class="rec-emoji">⚠️</div><p>${escapeHtml(result.error)}</p></div>`;
+
+  } else if (result.countryMode && result.countries.length > 0) {
+    // Country-browse mode — render flag pills
+    subtitleHtml = `<div class="results-overlay__count">${result.countries.length} countries available</div>`;
+    const pills = result.countries.map(({ name, flag, count }) => `
+      <button class="rec-country-pill overlay-country-pill" type="button" data-country="${escapeHtml(name)}" aria-label="${escapeHtml(name)} — ${count} destination${count !== 1 ? 's' : ''}">
+        <span class="rec-country-pill__flag">${flag}</span>
+        <span class="rec-country-pill__name">${escapeHtml(name)}</span>
+        <span class="rec-country-pill__count">${count}</span>
+      </button>`).join('');
+    bodyHtml = `
+      <div class="rec-country-header" style="margin-bottom:1rem;">
+        <span class="rec-country-label">🌍 Browse by Country</span>
+      </div>
+      <div class="rec-country-grid" style="padding:0;">${pills}</div>`;
+
   } else if (result.matches.length === 0) {
     bodyHtml = `<div class="rec-state"><div class="rec-emoji">🔍</div><p>No destinations matched "<strong>${escapeHtml(query)}</strong>". Try a broader search term.</p></div>`;
+
   } else {
+    subtitleHtml = `<div class="results-overlay__count">${result.matches.length} destination${result.matches.length !== 1 ? 's' : ''} found</div>`;
     const cards = result.matches.map(dest => {
       const emoji = DEST_EMOJI[dest.id] || "📍";
       const tags = dest.tags.slice(0, 4).map(t => `<span class="dest-tag">${escapeHtml(t)}</span>`).join("");
@@ -387,12 +490,13 @@ function triggerFullResults(query) {
     bodyHtml = `<div class="results-grid">${cards}</div>`;
   }
 
+
   overlay.innerHTML = `
     <div class="results-overlay__panel">
       <div class="results-overlay__header">
         <div>
-          <div class="results-overlay__title">Results for "${escapeHtml(query)}"</div>
-          ${result.matches.length > 0 ? `<div class="results-overlay__count">${result.matches.length} destination${result.matches.length !== 1 ? 's' : ''} found</div>` : ''}
+          <div class="results-overlay__title">${result.countryMode ? '🌍 Countries' : `Results for "${escapeHtml(query)}"`}</div>
+          ${subtitleHtml}
         </div>
         <button class="results-overlay__close" id="results-close" aria-label="Close results">✕</button>
       </div>
@@ -407,6 +511,14 @@ function triggerFullResults(query) {
 
   closeBtn.addEventListener("click", () => overlay.remove());
   overlay.addEventListener("click", (e) => {
+    // Country pill click inside overlay
+    const pill = e.target.closest(".overlay-country-pill");
+    if (pill) {
+      const country = pill.dataset.country;
+      overlay.remove();
+      triggerFullResults(country);
+      return;
+    }
     if (e.target === overlay) overlay.remove();
   });
   overlay.addEventListener("keydown", (e) => {
@@ -414,6 +526,7 @@ function triggerFullResults(query) {
   });
 
   // Update nav state
+
   NavigationBar.setActive("/search");
 }
 
