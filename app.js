@@ -47,17 +47,47 @@ const DESTINATIONS = [
   { id: "38", name: "Somnath, India", descriptor: "First of the twelve Jyotirlinga shrines", tags: ["india", "temple", "gujarat", "shiva", "jyotirlinga", "pilgrimage", "ancient"] },
 ];
 
-/** Destination emoji map for visual flair */
-const DEST_EMOJI = {
-  "1": "🗼", "2": "⛩️", "3": "🏛️", "4": "🌺", "5": "🗽",
-  "6": "🏔️", "7": "🦁", "8": "🌸", "9": "🏗️", "10": "🏝️",
-  "11": "🚤", "12": "🥝", "13": "🐫", "14": "🌴", "15": "🌋",
-  "16": "🏙️", "17": "🧊", "18": "🏰", "19": "🐚", "20": "🦒",
+/** Destination image map — Unsplash photos, cropped square thumbnails */
+const DEST_IMAGE = {
+  "1":  "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=200&h=200&fit=crop&q=80", // Paris
+  "2":  "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=200&h=200&fit=crop&q=80", // Tokyo
+  "3":  "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=200&h=200&fit=crop&q=80", // Santorini
+  "4":  "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=200&h=200&fit=crop&q=80", // Bali
+  "5":  "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=200&h=200&fit=crop&q=80", // New York
+  "6":  "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=200&h=200&fit=crop&q=80", // Machu Picchu
+  "7":  "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=200&h=200&fit=crop&q=80", // Kenya
+  "8":  "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=200&h=200&fit=crop&q=80", // Kyoto
+  "9":  "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=200&h=200&fit=crop&q=80", // Barcelona
+  "10": "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=200&h=200&fit=crop&q=80", // Maldives
+  "11": "https://images.unsplash.com/photo-1533587851505-d119e13c8b76?w=200&h=200&fit=crop&q=80", // Amalfi
+  "12": "https://images.unsplash.com/photo-1469521669194-babb45599def?w=200&h=200&fit=crop&q=80", // New Zealand
+  "13": "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=200&h=200&fit=crop&q=80", // Cairo
+  "14": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=200&h=200&fit=crop&q=80", // Rio
+  "15": "https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=200&h=200&fit=crop&q=80", // Iceland
+  "16": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=200&h=200&fit=crop&q=80", // Dubai
+  "17": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=200&h=200&fit=crop&q=80", // Patagonia
+  "18": "https://images.unsplash.com/photo-1541849546-216549ae216d?w=200&h=200&fit=crop&q=80", // Prague
+  "19": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=200&h=200&fit=crop&q=80", // Phuket
+  "20": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=200&h=200&fit=crop&q=80", // Tanzania
   // India
-  "21": "🕌", "22": "🌿", "23": "🏯", "24": "🏖️", "25": "🪔",
-  "26": "🎬", "27": "🗿", "28": "🏔️", "29": "🐠", "30": "🍵",
-  "31": "🛕", "32": "🗿", "33": "🙏", "34": "🎡", "35": "🏛️",
-  "36": "⛪", "37": "🌊", "38": "🔱",
+  "21": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=200&h=200&fit=crop&q=80", // Agra/Taj Mahal
+  "22": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=200&h=200&fit=crop&q=80", // Kerala
+  "23": "https://images.unsplash.com/photo-1477587458883-47145ed94604?w=200&h=200&fit=crop&q=80", // Jaipur
+  "24": "https://images.unsplash.com/photo-1599661046289-e31897846c64?w=200&h=200&fit=crop&q=80", // Goa
+  "25": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=200&h=200&fit=crop&q=80", // Varanasi
+  "26": "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=200&h=200&fit=crop&q=80", // Mumbai
+  "27": "https://images.unsplash.com/photo-1591018653831-c7a5b7bcf586?w=200&h=200&fit=crop&q=80", // Hampi
+  "28": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&q=80", // Ladakh
+  "29": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=200&h=200&fit=crop&q=80", // Andaman
+  "30": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=200&h=200&fit=crop&q=80", // Darjeeling
+  "31": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=200&h=200&fit=crop&q=80", // Madurai
+  "32": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?w=200&h=200&fit=crop&q=80", // Khajuraho
+  "33": "https://images.unsplash.com/photo-1609340938053-0d1c5ec3d7ea?w=200&h=200&fit=crop&q=80", // Tirupati
+  "34": "https://images.unsplash.com/photo-1590077427969-c3c23a6c5b1a?w=200&h=200&fit=crop&q=80", // Puri
+  "35": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=200&h=200&fit=crop&q=80", // Mahabalipuram
+  "36": "https://images.unsplash.com/photo-1545126697-f8b8ec8f9440?w=200&h=200&fit=crop&q=80", // Bhubaneswar
+  "37": "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=200&h=200&fit=crop&q=80", // Tiruchirappalli
+  "38": "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?w=200&h=200&fit=crop&q=80", // Somnath
 };
 
 /** Flag emoji for each country in the dataset */
@@ -70,6 +100,23 @@ const COUNTRY_FLAGS = {
   "Argentina": "🇦🇷", "Czech Republic": "🇨🇿", "Thailand": "🇹🇭",
   "Tanzania": "🇹🇿", "India": "🇮🇳",
 };
+
+/** ISO 3166-1 alpha-2 codes — used to load real flag images from flagcdn.com */
+const COUNTRY_ISO = {
+  "France": "fr", "Japan": "jp", "Greece": "gr",
+  "Indonesia": "id", "USA": "us", "Peru": "pe",
+  "Kenya": "ke", "Spain": "es", "Maldives": "mv",
+  "Italy": "it", "New Zealand": "nz", "Egypt": "eg",
+  "Brazil": "br", "Iceland": "is", "UAE": "ae",
+  "Argentina": "ar", "Czech Republic": "cz", "Thailand": "th",
+  "Tanzania": "tz", "India": "in",
+};
+
+/** Returns a flagcdn.com image URL for a given country name */
+function getFlagUrl(countryName) {
+  const iso = COUNTRY_ISO[countryName];
+  return iso ? `https://flagcdn.com/w80/${iso}.png` : "";
+}
 
 /** Maps destination id → country name */
 const DEST_COUNTRY = {
@@ -296,11 +343,13 @@ const RecommendationList = (() => {
       item.setAttribute("aria-label", `${dest.name} — ${dest.descriptor}`);
       item.dataset.id = dest.id;
 
-      const emoji = DEST_EMOJI[dest.id] || "📍";
+      const imgSrc = DEST_IMAGE[dest.id] || "";
       const tagsHtml = dest.tags.slice(0, 3).map(t => `<span class="rec-tag">${escapeHtml(t)}</span>`).join("");
 
       item.innerHTML = `
-        <div class="rec-item__icon">${emoji}</div>
+        <div class="rec-item__icon">
+          <img src="${imgSrc}" alt="${escapeHtml(dest.name)}" class="dest-thumb" loading="lazy">
+        </div>
         <div class="rec-item__body">
           <div class="rec-item__name">${escapeHtml(dest.name)}</div>
           <div class="rec-item__desc">${escapeHtml(dest.descriptor)}</div>
@@ -495,11 +544,13 @@ function triggerFullResults(query) {
   } else {
     subtitleHtml = `<div class="results-overlay__count">${result.matches.length} destination${result.matches.length !== 1 ? 's' : ''} found</div>`;
     const cards = result.matches.map(dest => {
-      const emoji = DEST_EMOJI[dest.id] || "📍";
+      const imgSrc = DEST_IMAGE[dest.id] || "";
       const tags = dest.tags.slice(0, 4).map(t => `<span class="dest-tag">${escapeHtml(t)}</span>`).join("");
       return `
         <div class="result-item" role="button" tabindex="0" aria-label="${escapeHtml(dest.name)}">
-          <div class="result-item__icon">${emoji}</div>
+          <div class="result-item__icon">
+            <img src="${imgSrc}" alt="${escapeHtml(dest.name)}" class="dest-thumb" loading="lazy">
+          </div>
           <div class="result-item__name">${escapeHtml(dest.name)}</div>
           <div class="result-item__desc">${escapeHtml(dest.descriptor)}</div>
           <div class="result-item__tags">${tags}</div>
@@ -558,12 +609,12 @@ function renderDestinationsGrid() {
 
   const featured = DESTINATIONS.slice(0, 6);
   grid.innerHTML = featured.map(dest => {
-    const emoji = DEST_EMOJI[dest.id] || "📍";
+    const imgSrc = DEST_IMAGE[dest.id] || "";
     const tags = dest.tags.slice(0, 3).map(t => `<span class="dest-tag">${escapeHtml(t)}</span>`).join("");
     return `
       <article class="dest-card animate-on-scroll">
         <div class="dest-card__img">
-          <div class="dest-card__img-text">${emoji}</div>
+          <img src="${imgSrc}" alt="${escapeHtml(dest.name)}" class="dest-card__photo" loading="lazy">
           <div class="dest-card__img-overlay"></div>
         </div>
         <div class="dest-card__body">
@@ -577,6 +628,36 @@ function renderDestinationsGrid() {
   // Click cards to trigger full search
   grid.querySelectorAll(".dest-card").forEach((card, i) => {
     card.addEventListener("click", () => triggerFullResults(featured[i].name));
+  });
+}
+
+// ============================================================
+// COUNTRIES GRID COMPONENT
+// ============================================================
+
+function renderCountriesGrid() {
+  const grid = document.getElementById("countries-grid");
+  if (!grid) return;
+
+  const countries = getUniqueCountries();
+
+  grid.innerHTML = countries.map(({ name, count }) => {
+    const flagUrl = getFlagUrl(name);
+    const flagHtml = flagUrl
+      ? `<img src="${flagUrl}" alt="Flag of ${escapeHtml(name)}" class="country-card__flag-img" loading="lazy">`
+      : `<span class="country-card__flag-fallback">${escapeHtml(name.slice(0,2).toUpperCase())}</span>`;
+    return `
+      <button class="country-card animate-on-scroll" type="button"
+        aria-label="${escapeHtml(name)} — ${count} destination${count !== 1 ? 's' : ''}">
+        <div class="country-card__flag">${flagHtml}</div>
+        <span class="country-card__name">${escapeHtml(name)}</span>
+        <span class="country-card__count">${count} spot${count !== 1 ? 's' : ''}</span>
+      </button>`;
+  }).join("");
+
+  grid.querySelectorAll(".country-card").forEach((card, i) => {
+    card.addEventListener("click", () => triggerFullResults(countries[i].name));
+    card.style.animationDelay = `${i * 0.04}s`;
   });
 }
 
@@ -626,6 +707,7 @@ document.addEventListener("DOMContentLoaded", () => {
   NavigationBar.init();
   SearchBar.init();
   renderDestinationsGrid();
+  renderCountriesGrid();
   initHeroBg();
 
   // Init scroll animations after grid rendered

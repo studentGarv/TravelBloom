@@ -61,7 +61,3 @@ TravelBloom/
 38 destinations across 20 countries including Europe, Asia, the Americas, Africa, and a dedicated collection of **Indian destinations** — cities, beaches, temples, hill stations, and wildlife.
 
 ---
-
-## 📄 License
-
-MIT © 2026 TravelBloom
