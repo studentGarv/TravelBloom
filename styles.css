@@ -478,6 +478,34 @@ button {
   transform: scale(0.97);
 }
 
+.search-bar__clear {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  transition: color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.search-bar__clear svg {
+  width: 14px;
+  height: 14px;
+}
+
+.search-bar__clear:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.1);
+}
+
+.search-bar__clear:active {
+  transform: scale(0.92);
+}
+
 /* ====================================================
    RECOMMENDATION LIST
    ==================================================== */

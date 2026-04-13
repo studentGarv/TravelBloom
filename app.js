@@ -339,6 +339,7 @@ const RecommendationList = (() => {
 const SearchBar = (() => {
   const input = document.getElementById("search-input");
   const spinner = document.getElementById("search-spinner");
+  const clearBtn = document.getElementById("search-clear-btn");
   const submitBtn = document.getElementById("search-submit-btn");
 
   let query = "";
@@ -377,10 +378,16 @@ const SearchBar = (() => {
     spinner.hidden = !show;
   }
 
+  /** Show or hide the clear button based on whether the input has a value */
+  function setClearBtn(visible) {
+    clearBtn.hidden = !visible;
+  }
+
   /** Populate the input with a selected destination name */
   function populate(name) {
     input.value = name;
     query = name;
+    setClearBtn(!!name);
     RecommendationList.hide();
     input.setAttribute("aria-expanded", "false");
   }
@@ -388,6 +395,7 @@ const SearchBar = (() => {
   function init() {
     input.addEventListener("input", (e) => {
       query = e.target.value;
+      setClearBtn(query.length > 0);
       if (query.trim().length < 2) {
         setSpinner(false);
         RecommendationList.render({ items: [], isLoading: false, error: null, noResults: false, visible: false });
@@ -395,6 +403,16 @@ const SearchBar = (() => {
         return;
       }
       doSearch(query);
+    });
+
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      query = "";
+      setClearBtn(false);
+      setSpinner(false);
+      RecommendationList.render({ items: [], isLoading: false, error: null, noResults: false, visible: false });
+      input.setAttribute("aria-expanded", "false");
+      input.focus();
     });
 
     input.addEventListener("keydown", (e) => {
